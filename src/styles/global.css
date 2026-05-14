@@ -4,18 +4,28 @@
    =========================================================== */
 
 :root {
-  /* Palette — paper white with deep ink, single warm accent */
-  --paper:        #ffffff;
-  --paper-soft:   #fafaf8;
-  --paper-warm:   #f4f1ec;
+  /* Palette — sampled from the hero photo (sky / sea / rock).
+     The page sits on a quiet gradient so it never looks like a flat template. */
+  --paper:        #fbfaf7;        /* off-white anchor */
+  --paper-soft:   #f4f1ea;        /* warm coastal cream */
+  --paper-warm:   #eef2f6;        /* faint sky tint for image bg */
+  --sky-1:        #dfeaf3;        /* highest sky from photo, very lifted */
+  --sky-2:        #c9dce9;        /* mid sky */
+  --sky-3:        #f0ece2;        /* warm sand wash bottom-right */
   --ink:          #0a0a0a;
   --ink-soft:     #1a1a1a;
   --ink-mute:     #6a6a6a;
   --ink-faint:    #a8a8a4;
   --rule:         rgba(10, 10, 10, 0.10);
   --rule-strong:  rgba(10, 10, 10, 0.22);
-  --accent:       #8b6a3f;     /* quiet, warm sand-brown accent */
-  --accent-soft:  #c9a96a;
+  --accent:       #4a5e64;        /* deep ocean-rock tone from photo */
+  --accent-soft:  #88b8df;        /* soft sky blue from photo */
+
+  /* Site-wide refined gradient — minimal, soft, sampled from the photo */
+  --site-bg:
+    radial-gradient(ellipse 80% 60% at 12% 0%,   rgba(201, 220, 233, 0.55), transparent 60%),
+    radial-gradient(ellipse 70% 55% at 92% 100%, rgba(240, 236, 226, 0.65), transparent 65%),
+    linear-gradient(180deg, #fbfaf7 0%, #f5f2ec 100%);
 
   /* Typography */
   --font-sans:    'Archivo', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -42,7 +52,8 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background: var(--paper);
+  background: var(--site-bg);
+  background-attachment: fixed;
   color: var(--ink);
   font-size: 15px;
   font-weight: 400;
