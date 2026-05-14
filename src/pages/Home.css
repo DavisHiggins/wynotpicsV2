@@ -1,87 +1,204 @@
-/* ===================== Home — editorial collage ===================== */
+/* ===================== Home ===================== */
 
 .home {
-  padding-top: calc(var(--nav-h) + clamp(20px, 4vw, 50px));
+  background: transparent;
   padding-bottom: clamp(60px, 8vw, 110px);
-  background: var(--paper);
 }
 
-/* Top brand intro block — mirrors Fei Luo's centered name + small logo opening */
-.home-intro {
-  text-align: center;
-  padding: clamp(30px, 6vw, 70px) var(--gutter) clamp(40px, 6vw, 80px);
+/* ===================== Full-bleed hero ===================== */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  /* Black & white as requested */
+  filter: grayscale(1) contrast(1.04) brightness(1.02);
+  /* Slow Ken-Burns drift — subtle, cinematic */
+  animation: hero-drift 22s ease-in-out infinite alternate;
+  transform-origin: 56% 42%;
+  will-change: transform;
+}
+
+@keyframes hero-drift {
+  0%   { transform: scale(1.08) translate3d(0, 0, 0); }
+  100% { transform: scale(1.14) translate3d(-1.2%, -1%, 0); }
+}
+
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(10,10,10,0.32) 0%, rgba(10,10,10,0.04) 22%, rgba(10,10,10,0.06) 70%, rgba(10,10,10,0.62) 100%),
+    linear-gradient(90deg, rgba(10,10,10,0.28) 0%, transparent 30%, transparent 70%, rgba(10,10,10,0.28) 100%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 12px;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: calc(var(--nav-h) + clamp(40px, 8vw, 90px)) var(--gutter) clamp(40px, 6vw, 70px);
+  color: #fbfaf7;
 }
 
-.home-intro-logo {
-  width: clamp(54px, 6vw, 80px);
-  height: clamp(54px, 6vw, 80px);
-  margin-bottom: 6px;
-}
-
-.home-intro-name {
-  font-family: var(--font-sans);
-  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
-  font-weight: 300;
-  letter-spacing: -0.02em;
-  line-height: 1;
-}
-
-.home-intro-sub {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 300;
-  font-size: clamp(1rem, 1.4vw, 1.25rem);
-  color: var(--ink-mute);
-  letter-spacing: 0.04em;
-}
-
-.home-intro-meta {
-  margin-top: 12px;
+.hero-top {
   display: flex;
-  gap: 18px;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 720px;
 }
 
-.home-intro-meta span,
-.home-intro-meta a {
+.hero-kicker {
   font-family: var(--font-sans);
   font-size: 10px;
   font-weight: 500;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--ink-mute);
+  color: rgba(251, 250, 247, 0.78);
 }
 
-.home-intro-meta a:hover { color: var(--ink); }
-
-.home-intro-meta .dot {
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: var(--ink-faint);
+.hero-title {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: clamp(2.2rem, 6vw, 5.4rem);
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+  color: #fbfaf7;
+  text-shadow: 0 8px 40px rgba(0,0,0,0.4);
 }
 
-/* ===================== Collage ===================== */
+.hero-title .serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  color: #fbfaf7;
+}
+
+.hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.hero-handle {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #fbfaf7;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.hero-handle::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 1px;
+  background: #fbfaf7;
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-handle:hover::after {
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.hero-scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #fbfaf7;
+}
+
+.hero-scroll-label {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  opacity: 0.82;
+}
+
+.hero-scroll-line {
+  display: block;
+  width: 1px;
+  height: 42px;
+  background: linear-gradient(180deg, #fbfaf7, rgba(251, 250, 247, 0.2));
+  animation: scroll-pulse 2.2s ease-in-out infinite;
+  transform-origin: top;
+}
+
+@keyframes scroll-pulse {
+  0%, 100% { transform: scaleY(0.3); opacity: 0.4; }
+  50%      { transform: scaleY(1);   opacity: 1; }
+}
+
+/* Hero entrance — fade-in from black */
+.hero-fade-in {
+  position: absolute;
+  inset: 0;
+  background: #0a0a0a;
+  z-index: 3;
+  pointer-events: none;
+  animation: hero-curtain 1.6s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+
+@keyframes hero-curtain {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ===================== Editorial collage ===================== */
+
+.home-collage-section {
+  padding: clamp(80px, 12vw, 160px) 0 0;
+}
+
+.home-collage-head {
+  max-width: var(--max-w);
+  margin: 0 auto clamp(40px, 6vw, 80px);
+  padding: 0 var(--gutter);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
 
 .home-collage {
   position: relative;
   max-width: 1640px;
   margin: 0 auto;
   padding: 0 var(--gutter);
-  /* 12-column irregular grid */
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: clamp(28px, 4vw, 60px) clamp(20px, 3vw, 40px);
   align-items: start;
 }
 
-/* Each tile = an image card + small caption block */
 .tile {
   position: relative;
   display: flex;
@@ -168,16 +285,9 @@
   transition: transform 0.45s var(--ease);
 }
 
-.tile:hover .tile-more {
-  color: var(--ink);
-}
+.tile:hover .tile-more { color: var(--ink); }
+.tile:hover .tile-more::after { transform: scaleX(0); transform-origin: left; }
 
-.tile:hover .tile-more::after {
-  transform: scaleX(0);
-  transform-origin: left;
-}
-
-/* Tile placements — asymmetric, intentional. */
 .tile-1 { grid-column: 1 / span 6;  grid-row: 1; }
 .tile-1 .tile-img-wrap { aspect-ratio: 4 / 5; }
 
@@ -196,7 +306,6 @@
 .tile-6 { grid-column: 8 / span 4;  grid-row: 3; margin-top: clamp(20px, 4vw, 60px); }
 .tile-6 .tile-img-wrap { aspect-ratio: 3 / 4; }
 
-/* Index labels — quiet markers like editorial page numbers */
 .tile-index {
   position: absolute;
   top: -22px;
@@ -271,29 +380,6 @@
   max-width: 52ch;
 }
 
-/* ===================== Closing CTA ===================== */
-
-.home-end {
-  padding: clamp(80px, 12vw, 160px) var(--gutter) clamp(20px, 4vw, 40px);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 28px;
-}
-
-.home-end h2 {
-  max-width: 22ch;
-}
-
-.home-end-meta {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 /* ===================== Responsive ===================== */
 
 @media (max-width: 1080px) {
@@ -306,6 +392,9 @@
 }
 
 @media (max-width: 720px) {
+  .hero { height: 92svh; min-height: 560px; }
+  .hero-img { background-position: center 22%; }
+  .hero-title { font-size: clamp(2rem, 9vw, 3rem); }
   .home-collage {
     grid-template-columns: 1fr;
     gap: 40px;

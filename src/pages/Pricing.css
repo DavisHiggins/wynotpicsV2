@@ -1,4 +1,4 @@
-.pricing-page { background: var(--paper); }
+.pricing-page { background: transparent; }
 
 .pricing-section { padding: clamp(40px, 6vw, 80px) 0; }
 
@@ -18,7 +18,7 @@
   flex-direction: column;
   gap: 22px;
   position: relative;
-  background: var(--paper);
+  background: transparent;
   transition: background 0.45s var(--ease);
 }
 

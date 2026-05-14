@@ -51,7 +51,7 @@ export default function About() {
             />
             <div className="about-portrait-cap">
               <span>wy_not_pics</span>
-              <span>2025</span>
+              <span>2026</span>
             </div>
           </motion.div>
 

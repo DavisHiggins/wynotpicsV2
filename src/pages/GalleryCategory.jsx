@@ -75,7 +75,7 @@ function CategoryView({ cat, copy }) {
 
         <div className="cat-meta-bar">
           <span>{String(images.length).padStart(2, '0')} frames</span>
-          <span>2025</span>
+          <span>2026</span>
         </div>
 
         <div className="cat-grid">

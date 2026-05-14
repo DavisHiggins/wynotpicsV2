@@ -1,7 +1,7 @@
 /* ===================== Gallery shell ===================== */
 
 .gallery-page {
-  background: var(--paper);
+  background: transparent;
   min-height: 100vh;
   padding-top: var(--nav-h);
 }
@@ -264,7 +264,7 @@
   align-items: center;
   justify-content: center;
   color: var(--ink);
-  background: var(--paper);
+  background: transparent;
   transition: all 0.35s var(--ease);
 }
 

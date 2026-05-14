@@ -1,4 +1,4 @@
-.contact-page { background: var(--paper); }
+.contact-page { background: transparent; }
 
 .contact-section {
   padding: clamp(30px, 5vw, 70px) 0 clamp(60px, 9vw, 120px);

@@ -1,4 +1,4 @@
-.about-page { background: var(--paper); }
+.about-page { background: transparent; }
 
 .about-bio {
   padding: clamp(40px, 6vw, 90px) 0;
