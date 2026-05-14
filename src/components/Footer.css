@@ -1,5 +1,5 @@
 .footer {
-  background: var(--paper);
+  background: transparent;
   border-top: 1px solid var(--rule);
   padding: clamp(60px, 8vw, 100px) 0 36px;
   color: var(--ink);

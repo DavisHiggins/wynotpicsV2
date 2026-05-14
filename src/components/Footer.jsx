@@ -1,23 +1,29 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import logo from '/logo.png'
 import './Footer.css'
 
 export default function Footer() {
   const year = new Date().getFullYear()
+  const { pathname } = useLocation()
+  // The footer CTA is redundant on the Contact page itself.
+  const showCta = pathname !== '/contact'
 
   return (
     <footer className="footer">
       <div className="container">
-        <div className="footer-cta">
-          <span className="kicker">Begin a project</span>
-          <h2 className="display-2">
-            Let's make <span className="serif">something quiet,</span><br />
-            and worth keeping.
-          </h2>
-          <Link to="/contact" className="btn btn-arrow">Start the conversation</Link>
-        </div>
+        {showCta && (
+          <>
+            <div className="footer-cta">
+              <span className="kicker">Begin a project</span>
+              <h2 className="display-2">
+                Let's <span className="serif">make</span> something.
+              </h2>
+              <Link to="/contact" className="btn btn-arrow">Start the conversation</Link>
+            </div>
 
-        <hr className="rule" />
+            <hr className="rule" />
+          </>
+        )}
 
         <div className="footer-grid">
           <div className="footer-col">

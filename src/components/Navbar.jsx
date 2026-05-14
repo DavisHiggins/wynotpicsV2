@@ -4,7 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import logo from '/logo.png'
 import './Navbar.css'
 
-const LEFT = [
+// All nav tabs grouped on the right.
+const NAV = [
   { to: '/',        label: 'Home' },
   {
     to: '/gallery', label: 'Portfolio',
@@ -15,14 +16,9 @@ const LEFT = [
     ],
   },
   { to: '/about',   label: 'About' },
-]
-
-const RIGHT = [
   { to: '/pricing', label: 'Pricing' },
   { to: '/contact', label: 'Contact' },
 ]
-
-const ALL = [...LEFT, ...RIGHT]
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -34,18 +30,19 @@ export default function Navbar() {
     return () => { document.body.style.overflow = '' }
   }, [open])
 
-  const isActiveTo = (to, exact = false) => {
-    if (exact) return location.pathname === to
-    return location.pathname === to || location.pathname.startsWith(to + '/')
-  }
-
   return (
     <>
       <header className="nav">
         <div className="nav-inner">
-          {/* Left nav */}
-          <ul className="nav-list nav-list-left" aria-label="Primary">
-            {LEFT.map((item) => (
+          {/* Brand — logo + wy_not_pics, on the left */}
+          <Link to="/" className="nav-brand" aria-label="wy_not_pics home">
+            <img src={logo} alt="" className="nav-brand-logo" />
+            <span className="nav-brand-name">wy_not_pics</span>
+          </Link>
+
+          {/* All nav items grouped together on the right */}
+          <ul className="nav-list" aria-label="Primary">
+            {NAV.map((item) => (
               <li key={item.to} className="nav-item">
                 <NavLink
                   to={item.to}
@@ -75,27 +72,6 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Brand center */}
-          <Link to="/" className="nav-brand" aria-label="wy_not_pics home">
-            <img src={logo} alt="" className="nav-brand-logo" />
-            <span className="nav-brand-name">Wyatt Bullock</span>
-            <span className="nav-brand-sub">Photography</span>
-          </Link>
-
-          {/* Right nav */}
-          <ul className="nav-list nav-list-right" aria-label="Secondary">
-            {RIGHT.map((item) => (
-              <li key={item.to} className="nav-item">
-                <NavLink
-                  to={item.to}
-                  className={({ isActive }) => `nav-link ${isActive ? 'nav-link-active' : ''}`}
-                >
-                  {item.label}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-
           {/* Mobile toggle */}
           <button
             className={`nav-toggle ${open ? 'nav-toggle-open' : ''}`}
@@ -118,7 +94,7 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
           >
             <nav className="nav-overlay-inner" aria-label="Mobile">
-              {ALL.map((link, i) => (
+              {NAV.map((link, i) => (
                 <motion.div
                   key={link.to}
                   initial={{ opacity: 0, y: 14 }}
