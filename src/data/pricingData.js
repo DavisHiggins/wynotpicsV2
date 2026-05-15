@@ -40,7 +40,7 @@ export const pricingPackages = [
     currency: '$',
     description: 'Clean imagery for brands, creators, and people.',
     features: [
-      '2–3 hour multi-location shoot',
+      '2 to 3 hour multi-location shoot',
       '25 fully retouched images',
       'Creative direction included',
       'Horizontal & vertical formats',
