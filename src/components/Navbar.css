@@ -41,9 +41,7 @@
 .nav-brand:hover { opacity: 0.78; }
 
 .nav-brand-logo {
-  width: 38px;
-  height: 38px;
-  display: block;
+  display: inline-block;
 }
 
 .nav-brand-name {

@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import logo from '/logo.svg'
+import Logo from './Logo'
 import './Footer.css'
 
 export default function Footer() {
@@ -28,7 +28,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-col">
             <span className="footer-mark">
-              <img src={logo} alt="" />
+              <Logo size={36} />
               <span>wy_not_pics</span>
             </span>
             <p className="footer-blurb">

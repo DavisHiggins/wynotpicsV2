@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { NavLink, Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import logo from '/logo.svg'
+import Logo from './Logo'
 import './Navbar.css'
 
 // All tabs grouped together on the right. Portfolio is a single link,
@@ -30,7 +30,7 @@ export default function Navbar() {
         <div className="nav-inner">
           {/* Brand: logo + wy_not_pics, left side */}
           <Link to="/" className="nav-brand" aria-label="wy_not_pics home">
-            <img src={logo} alt="" className="nav-brand-logo" />
+            <Logo size={38} className="nav-brand-logo" />
             <span className="nav-brand-name">wy_not_pics</span>
           </Link>
 
