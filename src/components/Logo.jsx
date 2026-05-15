@@ -1,4 +1,4 @@
-import wyatt from '/images/wyatt-home-camera.png'
+import logoSrc from '/logo.png'
 import './Logo.css'
 
 export default function Logo({ size = 38, className = '' }) {
@@ -8,8 +8,7 @@ export default function Logo({ size = 38, className = '' }) {
       style={{ width: size, height: size }}
       aria-hidden="true"
     >
-      <img src={wyatt} alt="" className="logo-mark-img" />
-      <span className="logo-mark-ring" />
+      <img src={logoSrc} alt="" className="logo-mark-img" />
     </span>
   )
 }
