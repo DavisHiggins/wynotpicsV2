@@ -34,7 +34,7 @@ export default function Contact() {
           <span className="kicker">Contact · Index 05</span>
           <h1 className="display-1">
             Tell me what you<br />
-            <span className="serif">need photographed.</span>
+            need photographed.
           </h1>
           <p className="lede">Send the details. I respond within 24 hours.</p>
         </div>
@@ -154,7 +154,7 @@ export default function Contact() {
                 >
                   <span className="kicker">Inquiry received</span>
                   <h2 className="display-2">
-                    Thanks, <span className="serif">{form.name.split(' ')[0] || 'friend'}.</span>
+                    Thanks, {form.name.split(' ')[0] || 'friend'}.
                   </h2>
                   <p className="lede">Your message is in. I'll be in touch within 24 hours.</p>
                 </motion.div>

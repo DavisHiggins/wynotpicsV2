@@ -29,7 +29,7 @@ export default function Home() {
       transition={{ duration: 0.5 }}
     >
       {/* ====================== Full-bleed B&W hero ====================== */}
-      <section className="hero" aria-label="Wyatt Bullock Photography" data-cursor="light">
+      <section className="hero" aria-label="Wyatt Bullock Photography">
         {/* Real img element so object-fit/object-position handle the portrait photo correctly */}
         <img
           src={heroImages.home.src}
@@ -47,9 +47,8 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="hero-kicker">wy_not_pics · 2026</span>
-            <h1 className="hero-title">
-              Wyatt <span className="serif">Bullock</span> Photography
+            <h1 className="hero-title hero-title-play">
+              Wyatt Bullock Photography
             </h1>
             <a
               href="https://www.instagram.com/wy_not_pics"
@@ -87,7 +86,7 @@ export default function Home() {
         >
           <span className="kicker">Selected · 01 / 03</span>
           <h2 className="display-2">
-            The work, <span className="serif">by chapter.</span>
+            The work, by chapter.
           </h2>
           <p className="lede">Three lanes. Clean, focused, intentional.</p>
         </motion.div>
@@ -132,7 +131,7 @@ export default function Home() {
             <span className="kicker">Approach</span>
             <h2 className="display-2" style={{ marginTop: 14 }}>
               Simple process.<br />
-              <span className="serif">Strong final work.</span>
+              Strong final work.
             </h2>
           </div>
 

@@ -67,7 +67,7 @@ function CategoryView({ cat, copy }) {
             <span className="kicker">{copy.accent}</span>
             <h2 className="display-2" style={{ marginTop: 14 }}>
               {copy.title}<br />
-              <span className="serif">{copy.serif}</span>
+              {copy.serif}
             </h2>
           </div>
           <p>{copy.intro}</p>

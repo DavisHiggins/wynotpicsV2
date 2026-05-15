@@ -28,7 +28,7 @@ export default function About() {
         <div className="container">
           <span className="kicker">About · Index 03</span>
           <h1 className="display-1">
-            Wyatt <span className="serif">Bullock,</span><br />
+            Wyatt Bullock,<br />
             behind the lens.
           </h1>
           <p className="lede">Charlotte-based photographer focused on sports, portraits, and lifestyle work.</p>
@@ -98,7 +98,7 @@ export default function About() {
           <div className="about-strip-head">
             <span className="kicker">Selected frames</span>
             <h2 className="display-2" style={{ marginTop: 14 }}>
-              A few from <span className="serif">the year.</span>
+              A few from the year.
             </h2>
           </div>
 
