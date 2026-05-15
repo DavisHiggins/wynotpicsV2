@@ -64,10 +64,13 @@
 .about-credits {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px 32px;
-  padding-top: 24px;
-  margin-top: 10px;
-  border-top: 1px solid var(--rule);
+  gap: 22px 32px;
+  margin-top: 18px;
+  padding: clamp(22px, 3vw, 32px);
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  box-shadow: 0 20px 60px -36px rgba(10, 10, 10, 0.12);
 }
 
 .about-credit {
