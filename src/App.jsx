@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
+import Cursor from './components/Cursor.jsx'
 
 import Home from './pages/Home.jsx'
 import Gallery from './pages/Gallery.jsx'
@@ -26,6 +27,7 @@ export default function App() {
 
   return (
     <>
+      <Cursor />
       <ScrollToTop />
       <Navbar />
       <main>
