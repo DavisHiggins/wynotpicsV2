@@ -4,17 +4,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 import logo from '/logo.png'
 import './Navbar.css'
 
-// All nav tabs grouped on the right.
+// All tabs grouped together on the right. Portfolio is a single link,
+// users pick a sub-category once they land on the gallery page.
 const NAV = [
   { to: '/',        label: 'Home' },
-  {
-    to: '/gallery', label: 'Portfolio',
-    children: [
-      { to: '/gallery/sports',     label: 'Sports' },
-      { to: '/gallery/portraits',  label: 'Portraits' },
-      { to: '/gallery/lifestyle',  label: 'Lifestyle' },
-    ],
-  },
+  { to: '/gallery', label: 'Portfolio' },
   { to: '/about',   label: 'About' },
   { to: '/pricing', label: 'Pricing' },
   { to: '/contact', label: 'Contact' },
@@ -34,13 +28,13 @@ export default function Navbar() {
     <>
       <header className="nav">
         <div className="nav-inner">
-          {/* Brand — logo + wy_not_pics, on the left */}
+          {/* Brand: logo + wy_not_pics, left side */}
           <Link to="/" className="nav-brand" aria-label="wy_not_pics home">
             <img src={logo} alt="" className="nav-brand-logo" />
             <span className="nav-brand-name">wy_not_pics</span>
           </Link>
 
-          {/* All nav items grouped together on the right */}
+          {/* Nav cluster, right side */}
           <ul className="nav-list" aria-label="Primary">
             {NAV.map((item) => (
               <li key={item.to} className="nav-item">
@@ -50,24 +44,7 @@ export default function Navbar() {
                   className={({ isActive }) => `nav-link ${isActive ? 'nav-link-active' : ''}`}
                 >
                   <span>{item.label}</span>
-                  {item.children && <span className="nav-link-caret">▼</span>}
                 </NavLink>
-                {item.children && (
-                  <ul className="nav-sub">
-                    {item.children.map((c) => (
-                      <li key={c.to}>
-                        <NavLink
-                          to={c.to}
-                          className={({ isActive }) =>
-                            `nav-sub-link ${isActive ? 'nav-sub-link-active' : ''}`
-                          }
-                        >
-                          {c.label}
-                        </NavLink>
-                      </li>
-                    ))}
-                  </ul>
-                )}
               </li>
             ))}
           </ul>

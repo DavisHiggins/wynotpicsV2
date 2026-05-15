@@ -6,8 +6,9 @@ export default function Cursor() {
   const ringRef = useRef(null)
   const [enabled, setEnabled] = useState(false)
 
-  // Only show the custom cursor on devices with a fine pointer (mouse).
+  // Mount the custom cursor only on devices with a true mouse pointer.
   useEffect(() => {
+    if (typeof window === 'undefined') return
     const mql = window.matchMedia('(pointer: fine)')
     setEnabled(mql.matches)
     const onChange = (e) => setEnabled(e.matches)
@@ -25,55 +26,82 @@ export default function Cursor() {
     let y = window.innerHeight / 2
     let rx = x
     let ry = y
+    let started = false
     let raf
 
     const move = (e) => {
       x = e.clientX
       y = e.clientY
+      if (!started) {
+        // Snap the ring to the first known position so it doesn't fly in from origin.
+        rx = x
+        ry = y
+        started = true
+      }
       dot.style.transform = `translate3d(${x}px, ${y}px, 0)`
     }
 
     const tick = () => {
-      rx += (x - rx) * 0.16
-      ry += (y - ry) * 0.16
+      rx += (x - rx) * 0.18
+      ry += (y - ry) * 0.18
       ring.style.transform = `translate3d(${rx}px, ${ry}px, 0)`
       raf = requestAnimationFrame(tick)
     }
-    tick()
 
-    const onEnterHover = () => ring.classList.add('cursor-ring--hover')
-    const onLeaveHover = () => ring.classList.remove('cursor-ring--hover')
+    // Single delegated handler. Works for dynamically added elements,
+    // no per-element listeners or MutationObserver perf cost.
+    const isInteractive = (el) =>
+      el && (
+        el.tagName === 'A' || el.tagName === 'BUTTON' ||
+        el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT' ||
+        el.hasAttribute('data-hover') ||
+        el.closest('a, button, [data-hover], input, textarea, select')
+      )
 
-    // Wire hover detection for interactive elements; refresh on route changes.
-    const wire = () => {
-      const els = document.querySelectorAll('a, button, [data-hover], input, textarea, select')
-      els.forEach((el) => {
-        el.addEventListener('mouseenter', onEnterHover)
-        el.addEventListener('mouseleave', onLeaveHover)
-      })
-      return els
+    // Track whether we're currently over a "dark" surface (the hero).
+    // Re-evaluated cheaply on each mousemove.
+    let darkBg = false
+    const checkDarkBg = (target) => {
+      if (!target) return false
+      // Walk up DOM and check for the hero or any element marked dark.
+      let el = target
+      while (el && el !== document.body) {
+        if (el.classList?.contains('hero') || el.dataset?.cursor === 'light') return true
+        el = el.parentElement
+      }
+      return false
     }
 
-    let hoverables = wire()
-    // Re-wire on DOM changes (route transitions, lightbox open/close, etc.)
-    const observer = new MutationObserver(() => {
-      hoverables.forEach((el) => {
-        el.removeEventListener('mouseenter', onEnterHover)
-        el.removeEventListener('mouseleave', onLeaveHover)
-      })
-      hoverables = wire()
-    })
-    observer.observe(document.body, { childList: true, subtree: true })
+    const onOver = (e) => {
+      // Interactive hover → grow ring
+      if (isInteractive(e.target)) {
+        ring.classList.add('cursor-ring--hover')
+      }
+      // Dark background hover → flip cursor color
+      const onDark = checkDarkBg(e.target)
+      if (onDark !== darkBg) {
+        darkBg = onDark
+        dot.classList.toggle('cursor-dot--light', darkBg)
+        ring.classList.toggle('cursor-ring--light', darkBg)
+      }
+    }
 
-    window.addEventListener('mousemove', move)
+    const onOut = (e) => {
+      if (!e.relatedTarget || !isInteractive(e.relatedTarget)) {
+        ring.classList.remove('cursor-ring--hover')
+      }
+    }
+
+    window.addEventListener('mousemove', move, { passive: true })
+    document.addEventListener('mouseover', onOver, { passive: true })
+    document.addEventListener('mouseout', onOut, { passive: true })
+    raf = requestAnimationFrame(tick)
+
     return () => {
       cancelAnimationFrame(raf)
       window.removeEventListener('mousemove', move)
-      observer.disconnect()
-      hoverables.forEach((el) => {
-        el.removeEventListener('mouseenter', onEnterHover)
-        el.removeEventListener('mouseleave', onLeaveHover)
-      })
+      document.removeEventListener('mouseover', onOver)
+      document.removeEventListener('mouseout', onOut)
     }
   }, [enabled])
 

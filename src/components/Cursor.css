@@ -1,7 +1,10 @@
+/* Aggressive cursor:none so no element can override it.
+   High specificity + the universal child selector covers everything. */
 @media (pointer: fine) {
-  body { cursor: none; }
-  body a, body button, body .img-card, body input, body textarea, body select, body [data-hover] {
-    cursor: none;
+  html, body,
+  html *,
+  body * {
+    cursor: none !important;
   }
 }
 
@@ -11,9 +14,10 @@
   top: 0;
   left: 0;
   pointer-events: none;
-  z-index: 9999;
-  mix-blend-mode: difference;
+  z-index: 99999;
   will-change: transform;
+  /* Start centered, off-screen-safe until first mousemove. */
+  transform: translate3d(-100px, -100px, 0);
 }
 
 .cursor-dot {
@@ -21,24 +25,35 @@
   height: 6px;
   margin: -3px 0 0 -3px;
   border-radius: 50%;
-  background: #fbfaf7;
+  background: #0a0a0a;
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              margin 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.25s ease;
 }
 
 .cursor-ring {
-  width: 36px;
-  height: 36px;
-  margin: -18px 0 0 -18px;
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
   border-radius: 50%;
-  border: 1px solid #fbfaf7;
+  border: 1px solid #0a0a0a;
   transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
               height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
               margin 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              background 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+              background 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+              border-color 0.35s ease;
 }
 
+/* When hovering an interactive element, the ring grows and fills lightly. */
 .cursor-ring--hover {
-  width: 60px;
-  height: 60px;
-  margin: -30px 0 0 -30px;
-  background: rgba(251, 250, 247, 0.10);
+  width: 56px;
+  height: 56px;
+  margin: -28px 0 0 -28px;
+  background: rgba(10, 10, 10, 0.06);
 }
+
+/* On dark backgrounds (the hero), invert the cursor to stay visible. */
+.cursor-dot--light  { background: #fbfaf7; }
+.cursor-ring--light { border-color: #fbfaf7; }
+.cursor-ring--hover.cursor-ring--light { background: rgba(251, 250, 247, 0.10); }
