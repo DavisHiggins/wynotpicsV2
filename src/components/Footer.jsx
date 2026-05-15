@@ -61,7 +61,6 @@ export default function Footer() {
             <ul className="footer-list">
               <li><a href="mailto:hello@wyattbullockphoto.com" className="link-line">hello@wyattbullockphoto.com</a></li>
               <li><a href="https://instagram.com/wy_not_pics" target="_blank" rel="noreferrer" className="link-line">@wy_not_pics</a></li>
-              <li>Charlotte, NC</li>
             </ul>
           </div>
         </div>
