@@ -23,7 +23,8 @@ export default function Pricing() {
         <div className="container">
           <span className="kicker">Investment · Index 04</span>
           <h1 className="display-1">
-            Pricing & Packages
+            Built around the work,<br />
+            not the template.
           </h1>
           <p className="lede">Clear starting points. Custom shoots available. Let's talk.</p>
         </div>
