@@ -53,7 +53,4 @@
   background: rgba(10, 10, 10, 0.06);
 }
 
-/* On dark backgrounds (the hero), invert the cursor to stay visible. */
-.cursor-dot--light  { background: #fbfaf7; }
-.cursor-ring--light { border-color: #fbfaf7; }
-.cursor-ring--hover.cursor-ring--light { background: rgba(251, 250, 247, 0.10); }
+/* Cursor stays black across the entire site for a consistent custom feel. */

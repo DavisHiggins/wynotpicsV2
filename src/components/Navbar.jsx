@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { NavLink, Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import logo from '/logo.png'
+import logo from '/logo.svg'
 import './Navbar.css'
 
 // All tabs grouped together on the right. Portfolio is a single link,

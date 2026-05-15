@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import logo from '/logo.png'
+import logo from '/logo.svg'
 import './Footer.css'
 
 export default function Footer() {
@@ -16,7 +16,7 @@ export default function Footer() {
             <div className="footer-cta">
               <span className="kicker">Begin a project</span>
               <h2 className="display-2">
-                Let's <span className="serif">make</span> something.
+                Book a session.
               </h2>
               <Link to="/contact" className="btn btn-arrow">Start the conversation</Link>
             </div>
@@ -61,7 +61,7 @@ export default function Footer() {
             <ul className="footer-list">
               <li><a href="mailto:hello@wyattbullockphoto.com" className="link-line">hello@wyattbullockphoto.com</a></li>
               <li><a href="https://instagram.com/wy_not_pics" target="_blank" rel="noreferrer" className="link-line">@wy_not_pics</a></li>
-              <li>Charlotte, NC, and travel</li>
+              <li>Charlotte, NC</li>
             </ul>
           </div>
         </div>

@@ -58,31 +58,10 @@ export default function Cursor() {
         el.closest('a, button, [data-hover], input, textarea, select')
       )
 
-    // Track whether we're currently over a "dark" surface (the hero).
-    // Re-evaluated cheaply on each mousemove.
-    let darkBg = false
-    const checkDarkBg = (target) => {
-      if (!target) return false
-      // Walk up DOM and check for the hero or any element marked dark.
-      let el = target
-      while (el && el !== document.body) {
-        if (el.classList?.contains('hero') || el.dataset?.cursor === 'light') return true
-        el = el.parentElement
-      }
-      return false
-    }
-
     const onOver = (e) => {
       // Interactive hover → grow ring
       if (isInteractive(e.target)) {
         ring.classList.add('cursor-ring--hover')
-      }
-      // Dark background hover → flip cursor color
-      const onDark = checkDarkBg(e.target)
-      if (onDark !== darkBg) {
-        darkBg = onDark
-        dot.classList.toggle('cursor-dot--light', darkBg)
-        ring.classList.toggle('cursor-ring--light', darkBg)
       }
     }
 

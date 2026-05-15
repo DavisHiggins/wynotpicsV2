@@ -41,8 +41,8 @@
 .nav-brand:hover { opacity: 0.78; }
 
 .nav-brand-logo {
-  width: 30px;
-  height: 30px;
+  width: 38px;
+  height: 38px;
   display: block;
 }
 
@@ -154,10 +154,10 @@
   gap: 18px;
   padding: 12px 0;
   font-family: var(--font-sans);
-  font-weight: 300;
-  font-size: clamp(2rem, 7vw, 3rem);
-  line-height: 1;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  font-size: clamp(1.3rem, 3.6vw, 1.7rem);
+  line-height: 1.1;
+  letter-spacing: -0.012em;
   color: var(--ink-mute);
   border-bottom: 1px solid var(--rule);
   transition: color 0.3s var(--ease), padding 0.5s var(--ease);
