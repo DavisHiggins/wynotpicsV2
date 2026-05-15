@@ -37,7 +37,7 @@
   /* Editorial display face reserved for the hero title. */
   --font-display: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
   /* Script face used for the marquee strip. */
-  --font-script:  'Pinyon Script', 'Allura', cursive;
+  --font-script:  'Great Vibes', 'Allura', cursive;
 
   /* Motion */
   --ease:         cubic-bezier(0.22, 1, 0.36, 1);
