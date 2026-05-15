@@ -29,6 +29,8 @@
   gap: 14px;
 }
 
+.footer-grid .footer-col > .kicker { color: var(--ink); }
+
 .footer-mark {
   display: inline-flex;
   align-items: center;
@@ -38,10 +40,15 @@
 .footer-mark .logo-mark { width: 36px; height: 36px; }
 
 .footer-mark span {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+}
+
+.footer-bottom .kicker:last-child {
+  text-transform: lowercase;
+  letter-spacing: 0.08em;
 }
 
 .footer-blurb {

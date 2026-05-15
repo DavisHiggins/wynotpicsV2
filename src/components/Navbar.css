@@ -46,11 +46,11 @@
 
 .nav-brand-name {
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.12em;
   color: var(--ink);
-  text-transform: uppercase;
+  text-transform: lowercase;
   white-space: nowrap;
 }
 
@@ -182,8 +182,10 @@
   gap: 8px;
 }
 
+.nav-overlay-foot .kicker { text-transform: lowercase; letter-spacing: 0.08em; }
+
 @media (max-width: 800px) {
   .nav-list { display: none; }
   .nav-toggle { display: flex; }
-  .nav-brand-name { font-size: 11px; letter-spacing: 0.22em; }
+  .nav-brand-name { font-size: 13px; letter-spacing: 0.1em; }
 }
