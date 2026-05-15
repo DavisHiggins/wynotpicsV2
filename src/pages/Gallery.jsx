@@ -42,7 +42,7 @@ export default function Gallery() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.16 }}
           >
-            Three lanes. Sports, portraits, lifestyle — organized simply, curated to feel finished.
+            Three lanes. Sports, portraits, lifestyle, organized simply, curated to feel finished.
           </motion.p>
         </div>
       </section>

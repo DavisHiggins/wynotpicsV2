@@ -21,7 +21,7 @@
   margin: 0;
 }
 
-/* Subtabs — text-only, underline-only, no boxes */
+/* Subtabs: text-only, underline-only, no boxes */
 .gallery-tabs {
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
@@ -208,7 +208,7 @@
   color: var(--ink-faint);
 }
 
-/* Asymmetric placement — repeats a 7-tile pattern across the column system. */
+/* Asymmetric placement: repeats a 7-tile pattern across the column system. */
 .cat-item:nth-child(7n+1) { grid-column: span 7; }
 .cat-item:nth-child(7n+1) .cat-item-img { aspect-ratio: 5 / 4; }
 

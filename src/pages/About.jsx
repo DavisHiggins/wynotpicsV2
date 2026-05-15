@@ -4,7 +4,7 @@ import './About.css'
 
 const credits = [
   ['Based',       'Charlotte, NC'],
-  ['Working',     '2022 — present'],
+  ['Working',     '2022 to present'],
   ['Specialties', 'Sports · Portraits · Lifestyle'],
   ['Available',   'Local & travel'],
 ]
@@ -67,7 +67,7 @@ export default function About() {
               I chase light, motion, and the second right before someone forgets the camera is there.
             </h2>
             <p>
-              wy_not_pics is the working name for the photography of Wyatt Bullock — a body of work built on
+              wy_not_pics is the working name for the photography of Wyatt Bullock. A body of work built on
               cinematic sports coverage, editorial portraits, and lifestyle storytelling for clients who care
               about how something looks and feels, not just whether the photo got taken.
             </p>

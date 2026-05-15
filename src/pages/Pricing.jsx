@@ -4,7 +4,7 @@ import { pricingPackages } from '../data/pricingData.js'
 import './Pricing.css'
 
 const faqs = [
-  { q: 'How far in advance should I book?',  a: 'Two to four weeks ahead is ideal, especially for game-day coverage. Tighter timelines are often workable — reach out.' },
+  { q: 'How far in advance should I book?',  a: 'Two to four weeks ahead is ideal, especially for game-day coverage. Tighter timelines are often workable. Reach out.' },
   { q: 'Do you travel?',                     a: 'Yes. Local work in the Charlotte region is at standard rates; travel work is priced case-by-case depending on distance and scope.' },
   { q: 'How long until I get the photos?',   a: 'Portrait and lifestyle galleries arrive within 7 days. Sports coverage is delivered within the week, often within 48 hours when timing matters.' },
   { q: 'Can I get the RAW files?',           a: 'Final delivery is fully edited, color-graded JPEGs. RAW files aren\'t included by default but can be added for select projects.' },
@@ -26,7 +26,7 @@ export default function Pricing() {
             Built around the <span className="serif">work,</span><br />
             not the template.
           </h1>
-          <p className="lede">Clear starting points. Custom shoots available — let's talk.</p>
+          <p className="lede">Clear starting points. Custom shoots available. Let's talk.</p>
         </div>
       </section>
 
