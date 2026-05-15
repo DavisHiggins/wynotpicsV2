@@ -16,16 +16,17 @@
   background: #0a0a0a;
 }
 
-/* Hero photo fills the viewport. The source is portrait, so on a wide
-   viewport the top/bottom edges are cropped. Position keeps Wyatt's head
-   and torso visible while the photo spans the full width. */
+/* Hero photo fills the viewport. Source is portrait (1086×1448), so on a
+   wide viewport it's scaled to fill width and a horizontal slice is shown.
+   Y=55% captures the horizon, water, catamaran, and Wyatt — the framing
+   matching the reference screenshot. */
 .hero-img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 70% 28%;
+  object-position: center 55%;
   filter: grayscale(1) contrast(1.05) brightness(1.02);
 }
 
@@ -380,7 +381,7 @@
 
 @media (max-width: 720px) {
   .hero { height: 92svh; min-height: 560px; }
-  .hero-img { object-position: 70% 30%; }
+  .hero-img { object-position: center 55%; }
   .hero-title { font-size: clamp(1.1rem, 4.6vw, 1.5rem); }
   .home-collage {
     grid-template-columns: 1fr;
