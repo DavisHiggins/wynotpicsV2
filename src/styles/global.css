@@ -33,7 +33,8 @@
   /* Typography — one face used across the site for headings + body. */
   --font-sans:    'Archivo', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif:   var(--font-sans);
-  --font-display: 'Play', 'Archivo', 'Inter', sans-serif;
+  /* Editorial display face reserved for the hero title. */
+  --font-display: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
 
   /* Motion */
   --ease:         cubic-bezier(0.22, 1, 0.36, 1);
