@@ -160,6 +160,102 @@
   100% { opacity: 0; }
 }
 
+/* ===================== Hero brand mark (top-right) ===================== */
+
+.hero-mark {
+  position: absolute;
+  top: calc(var(--nav-h) + clamp(20px, 3vw, 36px));
+  right: clamp(24px, 4vw, 56px);
+  z-index: 3;
+  width: clamp(78px, 9vw, 120px);
+  height: clamp(78px, 9vw, 120px);
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.hero-mark-logo {
+  position: relative;
+  z-index: 2;
+  width: 100% !important;
+  height: 100% !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.18),
+    0 14px 40px -10px rgba(0, 0, 0, 0.55),
+    0 2px 10px rgba(0, 0, 0, 0.35);
+  animation: hero-mark-breathe 5.5s ease-in-out infinite;
+}
+
+/* Soft glimmering halo behind the badge. */
+.hero-mark-glow {
+  position: absolute;
+  inset: -22%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%,
+      rgba(255, 255, 255, 0.22) 0%,
+      rgba(255, 255, 255, 0.08) 38%,
+      transparent 70%);
+  filter: blur(8px);
+  animation: hero-mark-pulse 4.5s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* Diagonal shimmer sweep across the badge. */
+.hero-mark-shimmer {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 3;
+  pointer-events: none;
+  mask: radial-gradient(circle, #000 64%, transparent 65%);
+  -webkit-mask: radial-gradient(circle, #000 64%, transparent 65%);
+}
+
+.hero-mark-shimmer::before {
+  content: '';
+  position: absolute;
+  top: -120%;
+  left: -60%;
+  width: 60%;
+  height: 340%;
+  background: linear-gradient(
+    115deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 65%
+  );
+  transform: rotate(18deg);
+  animation: hero-mark-sweep 4.2s ease-in-out infinite;
+}
+
+@keyframes hero-mark-breathe {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.025); }
+}
+
+@keyframes hero-mark-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(0.96); }
+  50%      { opacity: 1;    transform: scale(1.08); }
+}
+
+@keyframes hero-mark-sweep {
+  0%      { left: -60%; opacity: 0; }
+  20%     { opacity: 1; }
+  60%     { opacity: 1; }
+  100%    { left: 140%; opacity: 0; }
+}
+
+@media (max-width: 720px) {
+  .hero-mark {
+    top: calc(var(--nav-h) + 18px);
+    right: 18px;
+    width: 64px;
+    height: 64px;
+  }
+}
+
 /* ===================== Editorial collage ===================== */
 
 .home-collage-section {

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { heroImages, sportsImages, portraitImages, lifestyleImages } from '../data/galleryData.js'
+import Logo from '../components/Logo'
 import './Home.css'
 
 const tiles = [
@@ -39,6 +40,17 @@ export default function Home() {
         />
         <div className="hero-vignette" aria-hidden="true" />
         <div className="hero-fade-in" aria-hidden="true" />
+
+        <motion.div
+          className="hero-mark"
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <span className="hero-mark-glow" aria-hidden="true" />
+          <Logo size={108} className="hero-mark-logo" />
+          <span className="hero-mark-shimmer" aria-hidden="true" />
+        </motion.div>
 
         <div className="hero-content">
           <motion.div
