@@ -87,6 +87,28 @@ export default function Home() {
         </motion.a>
       </section>
 
+      {/* ====================== Marquee strip ====================== */}
+      <section className="home-marquee" aria-label="Categories">
+        <div className="home-marquee-track">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <span className="home-marquee-group" key={i} aria-hidden={i > 0}>
+              <span className="home-marquee-word">Editorial</span>
+              <span className="home-marquee-dot">•</span>
+              <span className="home-marquee-word">Events</span>
+              <span className="home-marquee-dot">•</span>
+              <span className="home-marquee-word">Travel</span>
+              <span className="home-marquee-dot">•</span>
+              <span className="home-marquee-word">Sports</span>
+              <span className="home-marquee-dot">•</span>
+              <span className="home-marquee-word">Portraits</span>
+              <span className="home-marquee-dot">•</span>
+              <span className="home-marquee-word">Lifestyle</span>
+              <span className="home-marquee-dot">•</span>
+            </span>
+          ))}
+        </div>
+      </section>
+
       {/* ====================== Editorial collage ====================== */}
       <section className="home-collage-section" id="work">
         <motion.div

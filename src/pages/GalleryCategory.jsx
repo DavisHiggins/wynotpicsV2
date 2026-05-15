@@ -75,7 +75,6 @@ function CategoryView({ cat, copy }) {
 
         <div className="cat-meta-bar">
           <span>{String(images.length).padStart(2, '0')} frames</span>
-          <span>2026</span>
         </div>
 
         <div className="cat-grid">
@@ -94,7 +93,6 @@ function CategoryView({ cat, copy }) {
               </div>
               <figcaption className="cat-item-cap">
                 <span className="cat-item-cap-title">{img.title}</span>
-                <span className="cat-item-cap-year">{img.year}</span>
               </figcaption>
             </motion.figure>
           ))}
@@ -143,7 +141,7 @@ function CategoryView({ cat, copy }) {
 
             <div className="lightbox-meta" onClick={(e) => e.stopPropagation()}>
               <span className="lb-title">{active.title}</span>
-              <span>{active.year} · {activeIdx + 1} / {images.length}</span>
+              <span>{activeIdx + 1} / {images.length}</span>
             </div>
           </motion.div>
         )}

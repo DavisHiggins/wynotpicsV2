@@ -105,10 +105,10 @@
   display: inline-flex;
   align-self: flex-start;
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
   color: #fbfaf7;
   position: relative;
   padding-bottom: 4px;
@@ -295,6 +295,60 @@
     width: 64px;
     height: 64px;
   }
+}
+
+/* ===================== Marquee strip ===================== */
+
+.home-marquee {
+  position: relative;
+  background: #fbfaf7;
+  overflow: hidden;
+  padding: clamp(18px, 2.4vw, 28px) 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.home-marquee-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: clamp(28px, 4vw, 56px);
+  animation: marquee-scroll 38s linear infinite;
+  will-change: transform;
+}
+
+.home-marquee-group {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(28px, 4vw, 56px);
+  flex-shrink: 0;
+}
+
+.home-marquee-word {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: clamp(1.8rem, 3.8vw, 3.2rem);
+  line-height: 1;
+  color: #0a0a0a;
+  letter-spacing: 0.005em;
+  white-space: nowrap;
+}
+
+.home-marquee-dot {
+  font-family: var(--font-sans);
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  color: #0a0a0a;
+  line-height: 1;
+  transform: translateY(-2px);
+}
+
+@keyframes marquee-scroll {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-25%, 0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-marquee-track { animation: none; }
 }
 
 /* ===================== Editorial collage ===================== */
