@@ -1,10 +1,10 @@
 /* ===========================================================
-   wy_not_pics — Editorial minimal redesign
+   wy_not_pics, editorial minimal redesign.
    Pure white, restrained type, asymmetric layouts.
    =========================================================== */
 
 :root {
-  /* Palette — sampled from the hero photo (sky / sea / rock).
+  /* Palette, sampled from the hero photo (sky / sea / rock).
      The page sits on a quiet gradient so it never looks like a flat template. */
   --paper:        #fbfaf7;        /* off-white anchor */
   --paper-soft:   #f4f1ea;        /* warm coastal cream */
@@ -21,11 +21,14 @@
   --accent:       #4a5e64;        /* deep ocean-rock tone from photo */
   --accent-soft:  #88b8df;        /* soft sky blue from photo */
 
-  /* Site-wide refined gradient — minimal, soft, sampled from the photo */
+  /* Site-wide refined gradient sampled from the brand palette and the hero photo.
+     Three soft radial washes layered over a near-white base for a quiet,
+     minimal, magazine-paper feel. */
   --site-bg:
-    radial-gradient(ellipse 80% 60% at 12% 0%,   rgba(201, 220, 233, 0.55), transparent 60%),
-    radial-gradient(ellipse 70% 55% at 92% 100%, rgba(240, 236, 226, 0.65), transparent 65%),
-    linear-gradient(180deg, #fbfaf7 0%, #f5f2ec 100%);
+    radial-gradient(ellipse 70% 50% at 8% 0%,    rgba(168, 197, 220, 0.45), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 95% 12%,  rgba(232, 222, 200, 0.40), transparent 65%),
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(212, 224, 232, 0.32), transparent 70%),
+    linear-gradient(180deg, #fbfaf7 0%, #f3f1ea 100%);
 
   /* Typography */
   --font-sans:    'Archivo', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
