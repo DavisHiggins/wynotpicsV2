@@ -31,11 +31,13 @@
     radial-gradient(ellipse 80% 60% at 50% 100%, rgba(212, 224, 232, 0.32), transparent 70%),
     linear-gradient(180deg, #fbfaf7 0%, #f3f1ea 100%);
 
-  /* Typography — one face used across the site for headings + body. */
-  --font-sans:    'Archivo', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Typography — EB Garamond used across the site for headings + body. */
+  --font-sans:    'EB Garamond', Georgia, 'Times New Roman', serif;
   --font-serif:   var(--font-sans);
   /* Editorial display face reserved for the hero title. */
   --font-display: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+  /* Script face used for the marquee strip. */
+  --font-script:  'Pinyon Script', 'Allura', cursive;
 
   /* Motion */
   --ease:         cubic-bezier(0.22, 1, 0.36, 1);
