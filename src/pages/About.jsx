@@ -1,17 +1,17 @@
 import { motion } from 'framer-motion'
-import { heroImages, sportsImages, automotiveImages, lifestyleImages } from '../data/galleryData.js'
+import { heroImages, sportsImages, portraitImages, lifestyleImages, automotiveImages } from '../data/galleryData.js'
 import './About.css'
 
 const credits = [
   ['Based',       'Charlotte & Raleigh, NC'],
   ['School',      'UNC Charlotte · Niner Times'],
-  ['Specialties', 'Sports · Automotive · Lifestyle'],
+  ['Specialties', 'Sports · Portraits · Lifestyle · Automotive'],
   ['Available',   'Local & travel'],
 ]
 
 const stripFrames = [
   sportsImages[0],     // football walkout
-  automotiveImages[3], // GT3 RS
+  portraitImages[1],   // prom twirl
   lifestyleImages[2],  // Sacré-Cœur
 ]
 
@@ -28,11 +28,10 @@ export default function About() {
         <div className="container">
           <span className="kicker">About · Index 03</span>
           <h1 className="display-1">
-            I'm Wyatt Bullock,<br />
-            sports photographer based<br />
-            in Charlotte, North Carolina.
+            Wyatt Bullock,<br />
+            behind the lens.
           </h1>
-          <p className="lede">Bringing out the extraordinary in the sports we play every day.</p>
+          <p className="lede">Charlotte-based photographer focused on sports, portraits, and lifestyle work.</p>
         </div>
       </section>
 

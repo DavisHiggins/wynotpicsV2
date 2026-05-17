@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import './Contact.css'
 
-const shootTypes = ['Sports Coverage', 'Automotive Session', 'Portrait Session', 'Lifestyle / Travel', 'Custom Project', 'Other']
+const shootTypes = ['Portrait Session', 'Sports Coverage', 'Lifestyle / Brand', 'Custom Project', 'Other']
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', shootType: '', date: '', message: '' })
@@ -33,14 +33,10 @@ export default function Contact() {
         <div className="container">
           <span className="kicker">Contact · Index 05</span>
           <h1 className="display-1">
-            Explore my works<br />
-            through years, and<br />
-            let's connect today.
+            Tell me what you<br />
+            need photographed.
           </h1>
-          <p className="lede">
-            Through my lens, I aim to capture the essence of each destination, revealing its unique
-            culture, landscapes, and experiences. Send the details and I'll be in touch.
-          </p>
+          <p className="lede">Send the details. I respond within 24 hours.</p>
         </div>
       </section>
 
@@ -73,11 +69,15 @@ export default function Contact() {
             </div>
             <div className="contact-info-row">
               <span className="contact-info-label">Based in</span>
-              <span className="contact-info-value">Charlotte & Raleigh, NC</span>
+              <span className="contact-info-value">Charlotte, NC</span>
             </div>
             <div className="contact-info-row">
               <span className="contact-info-label">Available for</span>
               <span className="contact-info-value">Local & travel photography</span>
+            </div>
+            <div className="contact-info-row">
+              <span className="contact-info-label">Response time</span>
+              <span className="contact-info-value">Within 24 hours</span>
             </div>
           </motion.aside>
 
@@ -162,7 +162,7 @@ export default function Contact() {
                   <h2 className="display-2">
                     Thanks, {form.name.split(' ')[0] || 'friend'}.
                   </h2>
-                  <p className="lede">Your message is in. I'll be in touch soon.</p>
+                  <p className="lede">Your message is in. I'll be in touch within 24 hours.</p>
                 </motion.div>
               )}
             </AnimatePresence>

@@ -4,8 +4,9 @@ import './Gallery.css'
 
 const tabs = [
   { to: 'sports',     label: 'Sports',     num: '01' },
-  { to: 'automotive', label: 'Automotive', num: '02' },
+  { to: 'portraits',  label: 'Portraits',  num: '02' },
   { to: 'lifestyle',  label: 'Lifestyle',  num: '03' },
+  { to: 'automotive', label: 'Automotive', num: '04' },
 ]
 
 export default function Gallery() {

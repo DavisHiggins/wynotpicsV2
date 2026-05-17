@@ -10,17 +10,23 @@ const COPY = {
     intro:  'Motion, pressure, rhythm, and the quiet seconds around competition.',
     accent: 'Action · Energy · Timing',
   },
+  portraits: {
+    title:  'Portraits.',
+    serif:  'Clean, direct, personal.',
+    intro:  'People, events, and editorial frames. Portraits with atmosphere, presence, and intention.',
+    accent: 'Editorial · Events · People',
+  },
+  lifestyle: {
+    title:  'Lifestyle.',
+    serif:  'Travel, culture, atmosphere.',
+    intro:  'Travel, atmosphere, and the in-between moments where the smallest details are an ode to life and culture.',
+    accent: 'Travel · Atmosphere · Details',
+  },
   automotive: {
     title:  'Automotive.',
     serif:  'Cars in their element.',
     intro:  'Builds, meets, and the road. Detail frames, street captures, and the cars worth stopping for.',
     accent: 'Builds · Meets · Detail',
-  },
-  lifestyle: {
-    title:  'Lifestyle.',
-    serif:  'Travel, culture, people.',
-    intro:  'Travel, atmosphere, portraits, and the in-between moments where the smallest details are an ode to life and culture.',
-    accent: 'Travel · Portraits · Culture',
   },
 }
 
