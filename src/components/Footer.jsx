@@ -32,7 +32,8 @@ export default function Footer() {
               <span>wy_not_pics</span>
             </span>
             <p className="footer-blurb">
-              Photography by Wyatt Bullock. Sports, portraits, lifestyle. Based in Charlotte, NC.
+              Photography by Wyatt Bullock. Sports, automotive, and lifestyle work. Based in
+              Charlotte and Raleigh, NC.
             </p>
           </div>
 
@@ -51,7 +52,7 @@ export default function Footer() {
             <span className="kicker">Portfolio</span>
             <ul className="footer-list">
               <li><Link to="/gallery/sports" className="link-line">Sports</Link></li>
-              <li><Link to="/gallery/portraits" className="link-line">Portraits</Link></li>
+              <li><Link to="/gallery/automotive" className="link-line">Automotive</Link></li>
               <li><Link to="/gallery/lifestyle" className="link-line">Lifestyle</Link></li>
             </ul>
           </div>
@@ -59,7 +60,8 @@ export default function Footer() {
           <div className="footer-col">
             <span className="kicker">Contact</span>
             <ul className="footer-list">
-              <li><a href="mailto:hello@wyattbullockphoto.com" className="link-line">hello@wyattbullockphoto.com</a></li>
+              <li><a href="mailto:wyattbullock2057@gmail.com" className="link-line">wyattbullock2057@gmail.com</a></li>
+              <li><a href="tel:+19196963327" className="link-line">+1 (919) 696-3327</a></li>
               <li><a href="https://instagram.com/wy_not_pics" target="_blank" rel="noreferrer" className="link-line">@wy_not_pics</a></li>
             </ul>
           </div>

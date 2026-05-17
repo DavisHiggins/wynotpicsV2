@@ -96,7 +96,7 @@ export default function Navbar() {
                 transition={{ delay: 0.45, duration: 0.5 }}
                 className="nav-overlay-foot"
               >
-                <span className="kicker">hello@wyattbullockphoto.com</span>
+                <span className="kicker">wyattbullock2057@gmail.com</span>
                 <span className="kicker">@wy_not_pics</span>
               </motion.div>
             </nav>
