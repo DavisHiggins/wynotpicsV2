@@ -32,8 +32,8 @@ export default function Footer() {
               <span>wy_not_pics</span>
             </span>
             <p className="footer-blurb">
-              Photography by Wyatt Bullock. Sports, automotive, and lifestyle work. Based in
-              Charlotte and Raleigh, NC.
+              Photography by Wyatt Bullock. Sports, portraits, lifestyle, automotive. Based in
+              Charlotte, NC.
             </p>
           </div>
 
@@ -52,8 +52,9 @@ export default function Footer() {
             <span className="kicker">Portfolio</span>
             <ul className="footer-list">
               <li><Link to="/gallery/sports" className="link-line">Sports</Link></li>
-              <li><Link to="/gallery/automotive" className="link-line">Automotive</Link></li>
+              <li><Link to="/gallery/portraits" className="link-line">Portraits</Link></li>
               <li><Link to="/gallery/lifestyle" className="link-line">Lifestyle</Link></li>
+              <li><Link to="/gallery/automotive" className="link-line">Automotive</Link></li>
             </ul>
           </div>
 
