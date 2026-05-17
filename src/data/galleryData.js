@@ -1,10 +1,8 @@
 // Real content for Wyatt Bullock Photography (wy_not_pics).
-// Photos pulled from his Pixieset site (wynotpics007.mypixieset.com) and
-// reorganized into the three categories he actually uses on his own site:
-// Sports, Automotive, Lifestyle.
+// Photos pulled from his Pixieset site (wynotpics007.mypixieset.com).
 //
-// All image paths resolve to /public/images/. Filenames are descriptive so
-// it is obvious what each photo is without opening it.
+// Four categories in this order: Sports, Portraits, Lifestyle, Automotive.
+// All image paths resolve to /public/images/.
 
 export const sportsImages = [
   { id: 'sp-01', src: '/images/sports-football-walkout-47.jpg',     alt: 'Football player #47 walking out of the tunnel', title: 'Walkout',         year: '2026', category: 'sports' },
@@ -34,6 +32,33 @@ export const sportsImages = [
   { id: 'sp-25', src: '/images/sports-hockey-skater.jpg',           alt: 'Hockey player with the puck on the ice',         title: 'On Ice',          year: '2026', category: 'sports' },
 ]
 
+export const portraitImages = [
+  { id: 'pr-01', src: '/images/life-prom-truck-couple.jpg', alt: 'Prom couple by a truck in formal black attire',  title: 'Tailgate',     year: '2026', category: 'portraits' },
+  { id: 'pr-02', src: '/images/life-prom-twirl-green.jpg',  alt: 'Prom couple, a twirl in green dress',            title: 'Twirl',        year: '2026', category: 'portraits' },
+  { id: 'pr-03', src: '/images/life-prom-couple-green.jpg', alt: 'Prom couple in green dress, evening portrait',   title: 'Promenade',    year: '2026', category: 'portraits' },
+  { id: 'pr-04', src: '/images/life-portrait-shades.jpg',   alt: 'Editorial portrait, white sunglasses and locs',  title: 'Editorial',    year: '2026', category: 'portraits' },
+  { id: 'pr-05', src: '/images/life-barbershop.jpg',        alt: 'Barbershop session in progress',                 title: 'In the Chair', year: '2026', category: 'portraits' },
+]
+
+export const lifestyleImages = [
+  // Europe / travel set
+  { id: 'ls-01', src: '/images/life-soho-london-night.jpg',  alt: 'Soho London street at night, neon SOHO sign',         title: 'Soho',           year: '2026', category: 'lifestyle' },
+  { id: 'ls-02', src: '/images/life-paris-street-dawn.jpg',  alt: 'Quiet Parisian street at dawn',                       title: 'Paris Dawn',     year: '2026', category: 'lifestyle' },
+  { id: 'ls-03', src: '/images/life-sacre-coeur-paris.jpg',  alt: 'Sacré-Cœur Basilica dome in Paris',                   title: 'Sacré-Cœur',     year: '2026', category: 'lifestyle' },
+  { id: 'ls-04', src: '/images/life-la-skyline.jpg',         alt: 'Los Angeles skyline from a hillside neighborhood',    title: 'LA Skyline',     year: '2026', category: 'lifestyle' },
+  { id: 'ls-05', src: '/images/life-stone-monument-sky.jpg', alt: 'Stone monument against a bright blue sky',            title: 'Monument',       year: '2026', category: 'lifestyle' },
+  { id: 'ls-06', src: '/images/life-canterbury-street.jpg',  alt: 'Canterbury-style English high street',                title: 'High Street',    year: '2026', category: 'lifestyle' },
+  { id: 'ls-07', src: '/images/life-london-financial.jpg',   alt: 'London financial district from a riverside walkway',  title: 'The City',       year: '2026', category: 'lifestyle' },
+  { id: 'ls-08', src: '/images/life-ivy-window.jpg',         alt: 'Ivy-covered window on a London facade',               title: 'Ivy',            year: '2026', category: 'lifestyle' },
+  { id: 'ls-09', src: '/images/life-royal-carriage.jpg',     alt: 'Royal horse-drawn carriage passing a London barrier', title: 'Carriage',       year: '2026', category: 'lifestyle' },
+  { id: 'ls-10', src: '/images/life-london-facade.jpg',      alt: 'Modern London glass facade',                          title: 'Reflections',    year: '2026', category: 'lifestyle' },
+  { id: 'ls-11', src: '/images/life-paris-alley.jpg',        alt: 'Stone alleyway in a Paris neighborhood',              title: 'Alleyway',       year: '2026', category: 'lifestyle' },
+  { id: 'ls-12', src: '/images/life-coastal-cliff.jpg',      alt: 'Lone figure on a coastal cliff',                      title: 'Cliffside',      year: '2026', category: 'lifestyle' },
+  { id: 'ls-13', src: '/images/life-graffiti-bikes.jpg',     alt: 'Two figures with bikes in front of a graffiti wall',  title: 'Brick Lane',     year: '2026', category: 'lifestyle' },
+  { id: 'ls-14', src: '/images/life-london-tube.jpg',        alt: 'London street scene near a Tube roundel',             title: 'Underground',    year: '2026', category: 'lifestyle' },
+  { id: 'ls-15', src: '/images/life-palm-sunset.jpg',        alt: 'Palm trees silhouetted against a sunset',             title: 'Palm Sunset',    year: '2026', category: 'lifestyle' },
+]
+
 export const automotiveImages = [
   { id: 'au-01', src: '/images/auto-mustang-blue-sl05.jpg',     alt: 'Blue Mustang Shelby in a parking lot at dusk',         title: 'SL05',           year: '2026', category: 'automotive' },
   { id: 'au-02', src: '/images/auto-lambo-urus-orange.jpg',     alt: 'Orange Lamborghini Urus parked curbside',              title: 'Urus',           year: '2026', category: 'automotive' },
@@ -49,31 +74,7 @@ export const automotiveImages = [
   { id: 'au-12', src: '/images/auto-mustang-dark.jpg',          alt: 'Dark Mustang front three-quarter at night',            title: 'After Hours',    year: '2026', category: 'automotive' },
 ]
 
-export const lifestyleImages = [
-  // Europe / travel set
-  { id: 'ls-01', src: '/images/life-soho-london-night.jpg',  alt: 'Soho London street at night, neon SOHO sign',         title: 'Soho',           year: '2026', category: 'lifestyle' },
-  { id: 'ls-02', src: '/images/life-paris-street-dawn.jpg',  alt: 'Quiet Parisian street at dawn',                       title: 'Paris Dawn',     year: '2026', category: 'lifestyle' },
-  { id: 'ls-03', src: '/images/life-sacre-coeur-paris.jpg',  alt: 'Sacré-Cœur Basilica dome in Paris',                   title: 'Sacré-Cœur',     year: '2026', category: 'lifestyle' },
-  { id: 'ls-04', src: '/images/life-la-skyline.jpg',         alt: 'Los Angeles skyline from a hillside neighborhood',    title: 'LA Skyline',     year: '2026', category: 'lifestyle' },
-  { id: 'ls-05', src: '/images/life-stone-monument-sky.jpg', alt: 'Stone monument against a bright blue sky',            title: 'Monument',       year: '2026', category: 'lifestyle' },
-  { id: 'ls-06', src: '/images/life-canterbury-street.jpg',  alt: 'Canterbury-style English high street',                title: 'High Street',    year: '2026', category: 'lifestyle' },
-  { id: 'ls-07', src: '/images/life-london-financial.jpg',   alt: 'London financial district from a riverside walkway',  title: 'The City',       year: '2026', category: 'lifestyle' },
-  { id: 'ls-08', src: '/images/life-ivy-window.jpg',         alt: 'Ivy-covered window on a London facade',               title: 'Ivy',            year: '2026', category: 'lifestyle' },
-  { id: 'ls-09', src: '/images/life-royal-carriage.jpg',     alt: 'Royal horse-drawn carriage passing a London barrier', title: 'Carriage',       year: '2026', category: 'lifestyle' },
-  { id: 'ls-10', src: '/images/life-london-facade.jpg',      alt: 'Modern London glass facade',                          title: 'Reflections',    year: '2026', category: 'lifestyle' },
-  // Portraits / events / people
-  { id: 'ls-11', src: '/images/life-prom-truck-couple.jpg',  alt: 'Prom couple by a truck in formal black attire',       title: 'Tailgate',       year: '2026', category: 'lifestyle' },
-  { id: 'ls-12', src: '/images/life-prom-twirl-green.jpg',   alt: 'Prom couple, a twirl in green dress',                 title: 'Twirl',          year: '2026', category: 'lifestyle' },
-  { id: 'ls-13', src: '/images/life-prom-couple-green.jpg',  alt: 'Prom couple in green dress, evening portrait',        title: 'Promenade',      year: '2026', category: 'lifestyle' },
-  { id: 'ls-14', src: '/images/life-portrait-shades.jpg',    alt: 'Editorial portrait, white sunglasses and locs',       title: 'Editorial',      year: '2026', category: 'lifestyle' },
-  { id: 'ls-15', src: '/images/life-barbershop.jpg',         alt: 'Barbershop session in progress',                      title: 'In the Chair',   year: '2026', category: 'lifestyle' },
-  { id: 'ls-16', src: '/images/life-paris-alley.jpg',        alt: 'Stone alleyway in a Paris neighborhood',              title: 'Alleyway',       year: '2026', category: 'lifestyle' },
-  { id: 'ls-17', src: '/images/life-coastal-cliff.jpg',      alt: 'Lone figure on a coastal cliff',                      title: 'Cliffside',      year: '2026', category: 'lifestyle' },
-  { id: 'ls-18', src: '/images/life-graffiti-bikes.jpg',     alt: 'Two figures with bikes in front of a graffiti wall',  title: 'Brick Lane',     year: '2026', category: 'lifestyle' },
-  { id: 'ls-19', src: '/images/life-london-tube.jpg',        alt: 'London street scene near a Tube roundel',             title: 'Underground',    year: '2026', category: 'lifestyle' },
-  { id: 'ls-20', src: '/images/life-palm-sunset.jpg',        alt: 'Palm trees silhouetted against a sunset',             title: 'Palm Sunset',    year: '2026', category: 'lifestyle' },
-]
-
+// Order in the gallery tabs: Sports, Portraits, Lifestyle, Automotive.
 export const galleryCategories = [
   {
     slug: 'sports',
@@ -83,28 +84,39 @@ export const galleryCategories = [
     images: sportsImages,
   },
   {
-    slug: 'automotive',
-    label: 'Automotive',
-    blurb: 'Cars, trucks, and the moments around them.',
-    cover: automotiveImages[0]?.src,
-    images: automotiveImages,
+    slug: 'portraits',
+    label: 'Portraits',
+    blurb: 'People, events, and editorial frames.',
+    cover: portraitImages[0]?.src,
+    images: portraitImages,
   },
   {
     slug: 'lifestyle',
     label: 'Lifestyle',
-    blurb: 'Travel, atmosphere, portraits, and the in-between.',
+    blurb: 'Travel, atmosphere, and the in-between.',
     cover: lifestyleImages[0]?.src,
     images: lifestyleImages,
+  },
+  {
+    slug: 'automotive',
+    label: 'Automotive',
+    blurb: 'Cars, builds, and the moments around them.',
+    cover: automotiveImages[0]?.src,
+    images: automotiveImages,
   },
 ]
 
 // Hero photos used on individual pages.
+// NOTE: /images/wyatt-home-camera.png is the original placeholder from the
+// v3 codebase — the actual "Wyatt holding the camera, no shirt, B&W" photo
+// is not in Wyatt's Pixieset export. Ask him to send that specific photo
+// and drop it in /public/images/wyatt-home-camera.png.
 export const heroImages = {
-  home:    { src: '/images/hero-football-celebration.jpg', alt: 'ECU Pirates football celebration, Wyatt Bullock photography', objectPosition: 'center 30%' },
-  about:   { src: '/images/sports-lacrosse-portrait.jpg',  alt: 'Lacrosse player portrait',                                    objectPosition: 'center 35%' },
-  contact: { src: '/images/auto-porsche-911-gt3rs.jpg',    alt: 'Porsche 911 GT3 RS by the ocean',                             objectPosition: 'center 50%' },
+  home:    { src: '/images/wyatt-home-camera.png',         alt: 'Wyatt holding a camera by the water', objectPosition: '58% 50%' },
+  about:   { src: '/images/sports-lacrosse-portrait.jpg',  alt: 'Lacrosse player portrait',            objectPosition: 'center 35%' },
+  contact: { src: '/images/auto-porsche-911-gt3rs.jpg',    alt: 'Porsche 911 GT3 RS by the ocean',     objectPosition: 'center 50%' },
 }
 
-export const allImages = [...sportsImages, ...automotiveImages, ...lifestyleImages]
+export const allImages = [...sportsImages, ...portraitImages, ...lifestyleImages, ...automotiveImages]
 
 export default galleryCategories
