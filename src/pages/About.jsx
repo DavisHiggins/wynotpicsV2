@@ -1,18 +1,18 @@
 import { motion } from 'framer-motion'
-import { heroImages, sportsImages, portraitImages, lifestyleImages } from '../data/galleryData.js'
+import { heroImages, sportsImages, automotiveImages, lifestyleImages } from '../data/galleryData.js'
 import './About.css'
 
 const credits = [
-  ['Based',       'Charlotte, NC'],
-  ['Working',     '2022 to present'],
-  ['Specialties', 'Sports · Portraits · Lifestyle'],
+  ['Based',       'Charlotte & Raleigh, NC'],
+  ['School',      'UNC Charlotte · Niner Times'],
+  ['Specialties', 'Sports · Automotive · Lifestyle'],
   ['Available',   'Local & travel'],
 ]
 
 const stripFrames = [
-  sportsImages[1],
-  portraitImages[0],
-  lifestyleImages[1],
+  sportsImages[0],     // football walkout
+  automotiveImages[3], // GT3 RS
+  lifestyleImages[2],  // Sacré-Cœur
 ]
 
 export default function About() {
@@ -28,10 +28,11 @@ export default function About() {
         <div className="container">
           <span className="kicker">About · Index 03</span>
           <h1 className="display-1">
-            Wyatt Bullock,<br />
-            behind the lens.
+            I'm Wyatt Bullock,<br />
+            sports photographer based<br />
+            in Charlotte, North Carolina.
           </h1>
-          <p className="lede">Charlotte-based photographer focused on sports, portraits, and lifestyle work.</p>
+          <p className="lede">Bringing out the extraordinary in the sports we play every day.</p>
         </div>
       </section>
 
@@ -63,21 +64,22 @@ export default function About() {
           >
             <span className="kicker">Bio</span>
             <h2>
-              I chase light, motion, and the second right before someone forgets the camera is there.
+              The work started with a Canon Rebel T7 on a Father's Day camping trip, and it never stopped.
             </h2>
             <p>
-              wy_not_pics is the working name for the photography of Wyatt Bullock. A body of work built on
-              cinematic sports coverage, editorial portraits, and lifestyle storytelling for clients who care
-              about how something looks and feels, not just whether the photo got taken.
+              My photography journey started in high school when I decided to take my new camera, the
+              Canon Rebel T7, camping over Father's Day weekend. During that trip I fell in love with
+              photography and brought my camera everywhere I went, which led to my first soccer game.
             </p>
             <p>
-              The work lives at the intersection of documentary and editorial. Honest enough to feel real,
-              composed enough to feel intentional. Athletes mid-stride, founders in their element, families
-              at golden hour. Each shoot is built around the story first; technical decisions follow.
+              Since that time my love for photography, and small ventures into videography, has grown
+              exponentially and branched out from simply capturing sports to travel, portraits, and
+              events. I look forward to capturing your most important moments.
             </p>
             <p>
-              Based in Charlotte, North Carolina. Available for local and travel work, and always open to
-              projects worth getting on a plane for.
+              Today I have experience capturing professional soccer, basketball, and collegiate football.
+              I am used to traveling for away games and am proficient with live uploads, sending photos
+              out directly after the game.
             </p>
 
             <div className="about-credits">

@@ -12,22 +12,9 @@
   width: 100%;
   height: 100vh;
   height: 100svh;
-
-
-
-
-
   overflow: hidden;
   background: #0a0a0a;
 }
-
-/* Hero photo fills the viewport. Source is portrait (1086×1448), so on a
-   wide viewport it's scaled to fill width and a horizontal slice is shown.
-   Y=55% captures the horizon, water, catamaran, and Wyatt — the framing
-   matching the reference screenshot. */
-
-
-
 
 .hero-img {
   position: absolute;
@@ -35,17 +22,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 55%;
-  filter: grayscale(1) contrast(1.05) brightness(1.02);
-
-
-
-
-
-
-
-
-
+  object-position: center 30%;
 }
 
 .hero-vignette {
@@ -68,15 +45,11 @@
   color: #fbfaf7;
 }
 
-/* Title block: top-left, title and @handle stacked together. */
 .hero-top {
   display: flex;
   flex-direction: column;
   gap: 16px;
   max-width: 720px;
-
-
-
 }
 
 .hero-title {
@@ -96,11 +69,8 @@
   font-style: normal;
   font-variation-settings: 'opsz' 144, 'SOFT' 50;
   letter-spacing: -0.005em;
-
-
 }
 
-/* @handle now sits directly under the title, not at the bottom of the screen. */
 .hero-handle {
   display: inline-flex;
   align-self: flex-start;
@@ -131,7 +101,6 @@
   transform-origin: right;
 }
 
-/* Scroll cue: absolutely positioned, centered horizontally at the bottom. */
 .hero-scroll {
   position: absolute;
   left: 50%;
@@ -143,7 +112,6 @@
   align-items: center;
   gap: 10px;
   color: #fbfaf7;
-
 }
 
 .hero-scroll-label {
@@ -169,7 +137,6 @@
   50%      { transform: scaleY(1);   opacity: 1; }
 }
 
-/* Hero entrance, fade-in from black */
 .hero-fade-in {
   position: absolute;
   inset: 0;
@@ -190,19 +157,12 @@
   position: absolute;
   top: calc(var(--nav-h) + clamp(20px, 3vw, 36px));
   right: clamp(24px, 4vw, 56px);
-
-
   z-index: 3;
   width: clamp(78px, 9vw, 120px);
   height: clamp(78px, 9vw, 120px);
   display: grid;
   place-items: center;
   pointer-events: none;
-
-
-
-
-
 }
 
 .hero-mark-logo {
@@ -215,11 +175,8 @@
     0 14px 40px -10px rgba(0, 0, 0, 0.55),
     0 2px 10px rgba(0, 0, 0, 0.35);
   animation: hero-mark-breathe 5.5s ease-in-out infinite;
-
-
 }
 
-/* Soft glimmering halo behind the badge. */
 .hero-mark-glow {
   position: absolute;
   inset: -22%;
@@ -234,7 +191,6 @@
   z-index: 1;
 }
 
-/* Diagonal shimmer sweep across the badge. */
 .hero-mark-shimmer {
   position: absolute;
   inset: 0;
@@ -278,14 +234,6 @@
   20%     { opacity: 1; }
   60%     { opacity: 1; }
   100%    { left: 140%; opacity: 0; }
-
-
-
-
-
-
-
-
 }
 
 @media (max-width: 720px) {
@@ -295,6 +243,38 @@
     width: 64px;
     height: 64px;
   }
+}
+
+/* ===================== Tagline strip (Wyatt's hero quote) ===================== */
+
+.home-tagline {
+  padding: clamp(80px, 11vw, 140px) 0 clamp(40px, 6vw, 70px);
+}
+
+.home-tagline-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 960px;
+  text-align: left;
+}
+
+.home-tagline-quote {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  max-width: 28ch;
+}
+
+.home-tagline-sub {
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  line-height: 1.65;
+  color: var(--ink-soft);
+  max-width: 62ch;
 }
 
 /* ===================== Marquee strip ===================== */
@@ -365,7 +345,6 @@
   flex-direction: column;
   gap: 14px;
   align-items: flex-start;
-
 }
 
 .home-collage {
@@ -380,14 +359,6 @@
 }
 
 .tile {
-
-
-
-
-
-
-
-
   position: relative;
   display: flex;
   flex-direction: column;
@@ -396,14 +367,11 @@
 
 .tile-img-wrap {
   position: relative;
-
   overflow: hidden;
   background: var(--paper-warm);
 }
 
 .tile-img-wrap img {
-
-
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -425,9 +393,6 @@
 }
 
 .tile-meta-left {
-
-
-
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -477,30 +442,10 @@
   transform-origin: right;
   transform: scaleX(1);
   transition: transform 0.45s var(--ease);
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 .tile:hover .tile-more { color: var(--ink); }
 .tile:hover .tile-more::after { transform: scaleX(0); transform-origin: left; }
-
-
-
-
-
-
-
-
 
 .tile-1 { grid-column: 1 / span 6;  grid-row: 1; }
 .tile-1 .tile-img-wrap { aspect-ratio: 4 / 5; }
@@ -508,15 +453,8 @@
 .tile-2 { grid-column: 8 / span 4;  grid-row: 1; margin-top: clamp(60px, 9vw, 130px); }
 .tile-2 .tile-img-wrap { aspect-ratio: 3 / 4; }
 
-
-
-
-
 .tile-3 { grid-column: 2 / span 5;  grid-row: 2; margin-top: clamp(30px, 5vw, 70px); }
 .tile-3 .tile-img-wrap { aspect-ratio: 5 / 4; }
-
-
-
 
 .tile-4 { grid-column: 8 / span 5;  grid-row: 2; margin-top: clamp(-40px, -4vw, 0px); }
 .tile-4 .tile-img-wrap { aspect-ratio: 4 / 5; }
@@ -524,22 +462,8 @@
 .tile-5 { grid-column: 3 / span 4;  grid-row: 3; margin-top: clamp(40px, 6vw, 90px); }
 .tile-5 .tile-img-wrap { aspect-ratio: 3 / 4; }
 
-
-
-
-
-
-
-
-
-
 .tile-6 { grid-column: 8 / span 4;  grid-row: 3; margin-top: clamp(20px, 4vw, 60px); }
 .tile-6 .tile-img-wrap { aspect-ratio: 3 / 4; }
-
-
-
-
-
 
 .tile-index {
   position: absolute;
@@ -550,19 +474,9 @@
   font-weight: 500;
   letter-spacing: 0.3em;
   color: var(--ink-faint);
-
-
-
-
-
-
 }
 
 /* ===================== Approach strip ===================== */
-
-
-
-
 
 .home-approach {
   margin-top: clamp(80px, 12vw, 160px);
@@ -587,12 +501,8 @@
 }
 
 .approach-items {
-
-
   display: flex;
   flex-direction: column;
-
-
 }
 
 .approach-item {
@@ -602,25 +512,9 @@
   padding: 26px 0;
   border-top: 1px solid var(--rule);
   align-items: baseline;
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 .approach-item:last-child { border-bottom: 1px solid var(--rule); }
-
-
-
-
 
 .approach-num {
   font-family: var(--font-sans);
@@ -647,10 +541,6 @@
 
 /* ===================== Responsive ===================== */
 
-
-
-
-
 @media (max-width: 1080px) {
   .tile-1 { grid-column: 1 / span 7; }
   .tile-2 { grid-column: 9 / span 4; margin-top: clamp(40px, 6vw, 80px); }
@@ -662,7 +552,7 @@
 
 @media (max-width: 720px) {
   .hero { height: 92svh; min-height: 560px; }
-  .hero-img { object-position: center 55%; }
+  .hero-img { object-position: center 30%; }
   .hero-title { font-size: clamp(1.1rem, 4.6vw, 1.5rem); }
   .home-collage {
     grid-template-columns: 1fr;

@@ -1,16 +1,19 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { heroImages, sportsImages, portraitImages, lifestyleImages } from '../data/galleryData.js'
+import { heroImages, sportsImages, automotiveImages, lifestyleImages } from '../data/galleryData.js'
 import Logo from '../components/Logo'
 import './Home.css'
 
+// Six tiles for the editorial collage on the home page. Drawn from his
+// actual portfolio across all three categories so the homepage previews
+// each lane.
 const tiles = [
-  { id: 'tile-1', cls: 'tile-1', cat: 'Lifestyle', blurb: 'Wyatt by the water, frame zero.',   to: '/gallery/lifestyle', img: heroImages.home.src, pos: heroImages.home.objectPosition, index: '01 / 06' },
-  { id: 'tile-2', cls: 'tile-2', cat: 'Portraits', blurb: 'Quiet portraits, made on location.',to: '/gallery/portraits', img: portraitImages[0]?.src, index: '02 / 06' },
-  { id: 'tile-3', cls: 'tile-3', cat: 'Sports',    blurb: 'The seconds around competition.',   to: '/gallery/sports',    img: sportsImages[0]?.src,   index: '03 / 06' },
-  { id: 'tile-4', cls: 'tile-4', cat: 'Portraits', blurb: 'Editorial frames with atmosphere.', to: '/gallery/portraits', img: portraitImages[2]?.src, index: '04 / 06' },
-  { id: 'tile-5', cls: 'tile-5', cat: 'Sports',    blurb: 'Motion, pressure, rhythm.',         to: '/gallery/sports',    img: sportsImages[1]?.src,   index: '05 / 06' },
-  { id: 'tile-6', cls: 'tile-6', cat: 'Lifestyle', blurb: 'Light from the road.',              to: '/gallery/lifestyle', img: lifestyleImages[2]?.src, index: '06 / 06' },
+  { id: 'tile-1', cls: 'tile-1', cat: 'Sports',     blurb: 'Action, timing, energy.',          to: '/gallery/sports',     img: sportsImages[0]?.src,     index: '01 / 06' },
+  { id: 'tile-2', cls: 'tile-2', cat: 'Automotive', blurb: 'Cars in their element.',           to: '/gallery/automotive', img: automotiveImages[2]?.src, index: '02 / 06' },
+  { id: 'tile-3', cls: 'tile-3', cat: 'Sports',     blurb: 'Motion, pressure, rhythm.',        to: '/gallery/sports',     img: sportsImages[15]?.src,    index: '03 / 06' },
+  { id: 'tile-4', cls: 'tile-4', cat: 'Lifestyle',  blurb: 'Travel, culture, atmosphere.',     to: '/gallery/lifestyle',  img: lifestyleImages[2]?.src,  index: '04 / 06' },
+  { id: 'tile-5', cls: 'tile-5', cat: 'Automotive', blurb: 'Builds, meets, and the road.',     to: '/gallery/automotive', img: automotiveImages[1]?.src, index: '05 / 06' },
+  { id: 'tile-6', cls: 'tile-6', cat: 'Lifestyle',  blurb: 'Portraits and people.',            to: '/gallery/lifestyle',  img: lifestyleImages[11]?.src, index: '06 / 06' },
 ]
 
 const approach = [
@@ -29,14 +32,14 @@ export default function Home() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      {/* ====================== Full-bleed B&W hero ====================== */}
+      {/* ====================== Full-bleed hero ====================== */}
       <section className="hero" aria-label="Wyatt Bullock Photography">
-        {/* Real img element so object-fit/object-position handle the portrait photo correctly */}
         <img
           src={heroImages.home.src}
           alt={heroImages.home.alt}
           className="hero-img"
           fetchpriority="high"
+          style={{ objectPosition: heroImages.home.objectPosition }}
         />
         <div className="hero-vignette" aria-hidden="true" />
         <div className="hero-fade-in" aria-hidden="true" />
@@ -73,7 +76,6 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Scroll cue, centered horizontally at the bottom of the hero */}
         <motion.a
           href="#work"
           className="hero-scroll"
@@ -87,22 +89,43 @@ export default function Home() {
         </motion.a>
       </section>
 
+      {/* ====================== Tagline strip ====================== */}
+      <section className="home-tagline" id="work">
+        <motion.div
+          className="container home-tagline-inner"
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <h2 className="home-tagline-quote">
+            Work with me; where the smallest details are an ode to life, culture, and our planet.
+          </h2>
+          <p className="home-tagline-sub">
+            Wyatt Bullock is a sports, automotive, and lifestyle photographer based in Charlotte
+            and Raleigh, North Carolina. Currently studying at the University of North Carolina at
+            Charlotte and working with the Niner Times student news outlet to keep refining his
+            sports photography.
+          </p>
+        </motion.div>
+      </section>
+
       {/* ====================== Marquee strip ====================== */}
       <section className="home-marquee" aria-label="Categories">
         <div className="home-marquee-track">
           {Array.from({ length: 4 }).map((_, i) => (
             <span className="home-marquee-group" key={i} aria-hidden={i > 0}>
-              <span className="home-marquee-word">Editorial</span>
+              <span className="home-marquee-word">Sports</span>
               <span className="home-marquee-dot">•</span>
-              <span className="home-marquee-word">Events</span>
+              <span className="home-marquee-word">Automotive</span>
+              <span className="home-marquee-dot">•</span>
+              <span className="home-marquee-word">Lifestyle</span>
               <span className="home-marquee-dot">•</span>
               <span className="home-marquee-word">Travel</span>
               <span className="home-marquee-dot">•</span>
-              <span className="home-marquee-word">Sports</span>
-              <span className="home-marquee-dot">•</span>
               <span className="home-marquee-word">Portraits</span>
               <span className="home-marquee-dot">•</span>
-              <span className="home-marquee-word">Lifestyle</span>
+              <span className="home-marquee-word">Events</span>
               <span className="home-marquee-dot">•</span>
             </span>
           ))}
@@ -110,7 +133,7 @@ export default function Home() {
       </section>
 
       {/* ====================== Editorial collage ====================== */}
-      <section className="home-collage-section" id="work">
+      <section className="home-collage-section">
         <motion.div
           className="home-collage-head"
           initial={{ opacity: 0, y: 18 }}
@@ -122,7 +145,7 @@ export default function Home() {
           <h2 className="display-2">
             The work, by chapter.
           </h2>
-          <p className="lede">Three lanes. Clean, focused, intentional.</p>
+          <p className="lede">Sports, automotive, lifestyle. Three lanes, one body of work.</p>
         </motion.div>
 
         <div className="home-collage" aria-label="Selected work">
@@ -142,7 +165,6 @@ export default function Home() {
                     src={t.img}
                     alt={`${t.cat} preview`}
                     loading={i < 2 ? 'eager' : 'lazy'}
-                    style={t.pos ? { objectPosition: t.pos } : undefined}
                   />
                 </div>
               </Link>

@@ -4,10 +4,22 @@ import { pricingPackages } from '../data/pricingData.js'
 import './Pricing.css'
 
 const faqs = [
-  { q: 'How far in advance should I book?',  a: 'Two to four weeks ahead is ideal, especially for game-day coverage. Tighter timelines are often workable. Reach out.' },
-  { q: 'Do you travel?',                     a: 'Yes. Local work in the Charlotte region is at standard rates; travel work is priced case-by-case depending on distance and scope.' },
-  { q: 'How long until I get the photos?',   a: 'Portrait and lifestyle galleries arrive within 7 days. Sports coverage is delivered within the week, often within 48 hours when timing matters.' },
-  { q: 'Can I get the RAW files?',           a: 'Final delivery is fully edited, color-graded JPEGs. RAW files aren\'t included by default but can be added for select projects.' },
+  {
+    q: 'What is included with every package?',
+    a: 'Every package includes a pre-session consultation, post-session editing, and high-resolution digital files, so you get maximum value for your investment.',
+  },
+  {
+    q: 'How are photos delivered?',
+    a: 'Edited photos are delivered via a downloadable link to preserve quality. For sports coverage I can also send select images live or directly after the game.',
+  },
+  {
+    q: 'Do you travel?',
+    a: 'Yes. I work locally in the Charlotte and Raleigh areas at standard rates, and I am used to traveling for away games and out-of-area shoots. Travel work is priced case-by-case depending on distance and scope.',
+  },
+  {
+    q: 'How far in advance should I book?',
+    a: 'Two to four weeks ahead is ideal, especially for game-day coverage. Tighter timelines are often workable. Reach out and we will figure it out.',
+  },
 ]
 
 export default function Pricing() {
@@ -23,9 +35,12 @@ export default function Pricing() {
         <div className="container">
           <span className="kicker">Investment · Index 04</span>
           <h1 className="display-1">
-            Pricing & Packages
+            Committing to quality.
           </h1>
-          <p className="lede">Clear starting points. Custom shoots available. Let's talk.</p>
+          <p className="lede">
+            My pricing includes pre-session consultation, post-session editing, and
+            high-resolution digital files, giving you maximum value for your investment.
+          </p>
         </div>
       </section>
 

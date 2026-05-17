@@ -3,9 +3,9 @@ import { motion } from 'framer-motion'
 import './Gallery.css'
 
 const tabs = [
-  { to: 'sports',    label: 'Sports',    num: '01' },
-  { to: 'portraits', label: 'Portraits', num: '02' },
-  { to: 'lifestyle', label: 'Lifestyle', num: '03' },
+  { to: 'sports',     label: 'Sports',     num: '01' },
+  { to: 'automotive', label: 'Automotive', num: '02' },
+  { to: 'lifestyle',  label: 'Lifestyle',  num: '03' },
 ]
 
 export default function Gallery() {
@@ -42,7 +42,9 @@ export default function Gallery() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.16 }}
           >
-            Three lanes. Sports, portraits, lifestyle, organized simply, curated to feel finished.
+            My portfolio is always growing and evolving as I take on new projects and explore new
+            creative opportunities. The photographs featured here are regularly updated to showcase
+            my most recent and refined work.
           </motion.p>
         </div>
       </section>
